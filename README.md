@@ -102,14 +102,13 @@ The Suffix can be one of :
 - Title
 - TestId
 
-getBy / findBy and queryBy
+getBy / findBy / queryBy
 --------------------------
 
 <details>
   <summary> getBy and getAllBy </summary>
     
-1. gettByRole options
----------------------   
+1. gettByRole options    
 <br />
 
 # name: the accessible name is for simple cases equal to 
@@ -120,77 +119,72 @@ c. value of aria-label attribute
 # other options- level(heading), hidden, selected, checked, pressed
 
 
-2. getByLabelText
-------------------
+2. getByLabelText  
 This will search for the label that matches the given text, then find the element associated with that label.
 
 
-3. getByPlaceholderText
-------------------
+3. getByPlaceholderText  
 This will search for all elements with a placeholder attribute and finds one that matches the given text
 
-4. getByText
-=-----------
+4. getByText  
 This will search for all elements that have a text node with textContent matching the given text.  <br />
 Typically, we would use this to find paragraph, div or span element.
 
-5. getByDisplayValue
----------------------
+5. getByDisplayValue  
 This returns the input,textarea or select element that has the matching display value.
 
 
-6. getByAltText
-----------------
+6. getByAltText  
 returns the element that has the given alt text <br />
 It only supports the element that has an alt attribute like <img>, <input>,<area> or custom HTML elements
 
-7. getByTitle
--------------
+7. getByTitle  
 return the element that has the matching title attribute.
 
-8. getByTestId
---------------
+8. getByTestId  
 return the element that has the matching data-testid attribute.
 
 <br />
 <ins>Priority Order for Queries</ins>
--------------------------------------
-gettByRole -> getByLabelText -> getByPlaceholderText -> getByText -> getByDisplayValue 
-these above 5 should cover the most, after these 5 ae below:
-getByAltText -> getByTitle -> getByTestId
+<br />
+gettByRole -> getByLabelText -> getByPlaceholderText -> getByText -> getByDisplayValue  <br />
+these above 5 should cover the most, after these 5 ae below:  <br />
+getByAltText -> getByTitle -> getByTestId  <br />  
 
 
 RTL- getBy and getAllBy Queries
 ===============================
-getByRole()  and getAllByRole()
-getByLabelText()  and getAllByLabelText()
-getByPlaceholderText and getAllByPlaceholderText
-getByText and getAllByText
-getByDisplayValue and getAllByDisplayValue
-getByAltText and getAllByAltText
-getByTitle and getAllByTitle
-getByTestId and getAllByTestId
+getByRole()  and getAllByRole()  
+getByLabelText()  and getAllByLabelText()  
+getByPlaceholderText and getAllByPlaceholderText  
+getByText and getAllByText  
+getByDisplayValue and getAllByDisplayValue  
+getByAltText and getAllByAltText  
+getByTitle and getAllByTitle  
+getByTestId and getAllByTestId  
 
-textMatch
-==========
-the first arg we passed in all the query method is a string 
-however in reality the arg it takes is called textMatch.
-textMatch is either - string, regex or function
-a. string 
+<ins>textMatch</ins>
+<br />
+
+the first arg we passed in all the query method is a string  <br />
+however in reality the arg it takes is called textMatch.  <br />
+textMatch is either - string, regex or function  <br />
+
+a. string  <br /> 
     e.g <div>Hello World</div>
         screen.getByText('Hello World'); // full string match
         screen.getByText('llo Worl', {exact: false}); // substring match
         screen.getByText('Hello World', {exact: false});  // ignore case
 
-b. regex
+b. regex  <br />
     e.g <div>Hello World</div>
         screen.getByText(/World/); // sub-string match
         screen.getByText(/world/i); // substring match- ignore case
         screen.getByText(/^hello world$/i);  // full string match- ignore case
 
-c. custom function
-Syntax- (content?:string, element?: Element|null) => boolean
-e.g screen.getByText((content) => content.startsWith('Hello'))
+c. custom function  <br />
+Syntax- (content?:string, element?: Element|null) => boolean  <br />
+e.g screen.getByText((content) => content.startsWith('Hello'))  <br />
 </details>
 
 <details>
