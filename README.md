@@ -109,50 +109,52 @@ getBy / findBy and queryBy
   <summary> getBy and getAllBy </summary>
     
 1. gettByRole options
+---------------------   
 <br />
 
 # name: the accessible name is for simple cases equal to 
-a. label of a form element
-b. text content of a button
-c. value of aria-label attribute
+a. label of a form element  
+b. text content of a button  
+c. value of aria-label attribute  
 
 # other options- level(heading), hidden, selected, checked, pressed
 
 
 2. getByLabelText
-==============
+------------------
 This will search for the label that matches the given text, then find the element associated with that label.
 
 
 3. getByPlaceholderText
-====================
+------------------
 This will search for all elements with a placeholder attribute and finds one that matches the given text
 
 4. getByText
-=========
-This will search for all elements that have a text node with textContent matching the given text.
+=-----------
+This will search for all elements that have a text node with textContent matching the given text.  <br />
 Typically, we would use this to find paragraph, div or span element.
 
 5. getByDisplayValue
-=================
+---------------------
 This returns the input,textarea or select element that has the matching display value.
 
 
 6. getByAltText
-============
-returns the element that has the given alt text
+----------------
+returns the element that has the given alt text <br />
 It only supports the element that has an alt attribute like <img>, <input>,<area> or custom HTML elements
 
 7. getByTitle
-==========
+-------------
 return the element that has the matching title attribute.
 
 8. getByTestId
-===========
+--------------
 return the element that has the matching data-testid attribute.
 
-Priority Order for Queries
-==========================
+<br />
+<ins>Priority Order for Queries</ins>
+-------------------------------------
 gettByRole -> getByLabelText -> getByPlaceholderText -> getByText -> getByDisplayValue 
 these above 5 should cover the most, after these 5 ae below:
 getByAltText -> getByTitle -> getByTestId
