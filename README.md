@@ -101,9 +101,11 @@ The Suffix can be one of :
 - AltText
 - Title
 - TestId
-
+  
+<details>
+  <summary> getBy and getAllBy </summary>
+    
 1. gettByRole options
-==================
 # name: the accessible name is for simple cases equal to 
 a. label of a form element
 b. text content of a button
@@ -182,8 +184,10 @@ b. regex
 c. custom function
 Syntax- (content?:string, element?: Element|null) => boolean
 e.g screen.getByText((content) => content.startsWith('Hello'))
+</details>
 
-
+<details>
+  <summary>queryBy and queryAllBy </summary>
 
 queryBy and queryAllBy
 ======================
@@ -195,10 +199,11 @@ use queryByRole for testing ele not present
       name: 'Start learning',
  })
 expect(startLearningButton).not.toBeInTheDocument()
+</details>
 
-
-findBy and findAllBy
-====================
+<details>
+  <summary> findBy and findAllBy  </summary>
+    
 Appearance/Disappearance
 what if elements are not present in DOM at beginning but appear after sometime
 e.g data fetched from server will be rendered after a few miliseconds
@@ -210,6 +215,8 @@ e.g data fetched from server will be rendered after a few miliseconds
 - findAllBy: 
     - return a promise which resolves to an array of elements when any elements are found which matches the given query
     - the promise is rejected if no elements are found after a default timeout of 1000ms
+
+</details>
 
 
 # Debugging
