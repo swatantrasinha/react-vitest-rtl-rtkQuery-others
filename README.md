@@ -107,6 +107,7 @@ getBy / findBy / queryBy
 
 <details>
   <summary> getBy and getAllBy </summary>
+This class of queries return the matching node for a query and throw a descriptive error if no element is matched or more than 1 element is matched <br />
     
 1. gettByRole options    
 <br />
