@@ -172,16 +172,16 @@ however in reality the arg it takes is called textMatch.  <br />
 textMatch is either - string, regex or function  <br />
 
 a. string  <br /> 
-    e.g <div>Hello World</div>
-        screen.getByText('Hello World'); // full string match
-        screen.getByText('llo Worl', {exact: false}); // substring match
-        screen.getByText('Hello World', {exact: false});  // ignore case
+    e.g <div>Hello World</div>  <br />
+        screen.getByText('Hello World'); // full string match  <br />
+        screen.getByText('llo Worl', {exact: false}); // substring match  <br />
+        screen.getByText('Hello World', {exact: false});  // ignore case  <br />
 
 b. regex  <br />
-    e.g <div>Hello World</div>
-        screen.getByText(/World/); // sub-string match
-        screen.getByText(/world/i); // substring match- ignore case
-        screen.getByText(/^hello world$/i);  // full string match- ignore case
+    e.g <div>Hello World</div>  <br />
+        screen.getByText(/World/); // sub-string match  <br />
+        screen.getByText(/world/i); // substring match- ignore case  <br />
+        screen.getByText(/^hello world$/i);  // full string match- ignore case  <br />
 
 c. custom function  <br />
 Syntax- (content?:string, element?: Element|null) => boolean  <br />
