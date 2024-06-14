@@ -101,11 +101,16 @@ The Suffix can be one of :
 - AltText
 - Title
 - TestId
-  
+
+getBy / findBy and queryBy
+--------------------------
+
 <details>
   <summary> getBy and getAllBy </summary>
     
 1. gettByRole options
+<br />
+
 # name: the accessible name is for simple cases equal to 
 a. label of a form element
 b. text content of a button
