@@ -85,19 +85,19 @@ RTL Queries
 
 <details>
   <summary> RTL Queries Types </summary>
-RTL Queries
-===========
-To find single element on page we have
+
+<ins>RTL Quesries </ins> - To find single element on page we have  <br />
+
 - getBy
 - queryBy
 - findBy
 
-To find multiple elements on page we have
+To find multiple elements on page we have  <br />
 - getAllBy
 - queryAllBy
 - findAllBy
 
-The Suffix can be one of :
+The Suffix can be one of :  <br />
 - Role
 - Labeltext
 - PlaceHolderText
@@ -108,7 +108,7 @@ The Suffix can be one of :
 - TestId
 
 getBy / findBy / queryBy
---------------------------
+------------------------
 
 <details>
   <summary> getBy and getAllBy </summary>
