@@ -233,49 +233,53 @@ e.g data fetched from server will be rendered after a few miliseconds
 # Testing Playground
 --------------------
 
-> get the chrome extension 
+> get the chrome extension -> use pointer and get query for elements  <br />
 
-use pointer and get query for elements  <br />
 
-================================================================================================================
-----------------------------------------------------------------------------------------------------------------
-================================================================================================================
 User Interaction
 -----------------
 A click using a mouse or a keypress using a keyboard, the application has to respond to such interactions.  <br />
-Hence the test should ensure the interations should be handled as expected.
+Hence the test should ensure the interations should be handled as expected.  <br />
+
 
 user-event
 ----------
-A companion library for testing that simulates user interactions by dispatching the events that would happen if the interaction took place in browser.
+A companion library for testing that simulates user interactions by dispatching the events that would happen if the interaction took place in browser.  <br />
 It is recommended way.
+
 
 fireEvent vs user-event
 -----------------------
-fireEvent is a method from RTL which is used to dispatch DOM events
-user-events simulates full interactions which may fire multiple events and do additional checks along the way
-e.g we can dispatch the change events on an input field using fireEvent
+fireEvent is a method from RTL which is used to dispatch DOM events  
+user-events simulates full interactions which may fire multiple events and do additional checks along the way  
+e.g we can dispatch the change events on an input field using fireEvent  
+<br />
 
-When a user types into a textbox the element has to be focussed and then keyboard and input events are fired and the selection and the value on the element are manipulated as they type.
+When a user types into a textbox the element has to be focussed and then keyboard and input events are fired and the selection  <br />
+and the value on the element are manipulated as they type.
 
-user-events allows you to describe a user-interaction instead of a concrete event. It add visibility and interactibilty checks and manipulates the
-DOM just like  user interaction in the browser would do.
+<br />
+
+user-events allows you to describe a user-interaction instead of a concrete event. It add visibility and interactibilty checks and manipulates the  <br />
+DOM just like  user interaction in the browser would do.  <br />
 e.g it would not let a user click a hidden element or type in a disabled textbox
 
-in package.json we can see user event has version 13 (as we have CRA version)
+in package.json we can see user event has version 13 (as we have CRA version)  <br />
 "@testing-library/user-event": "^13.5.0",
 
-the latest is 14 so we need to upgrade it and so give below command in terminal
-- yarn upgrade @testing-library/user-event@latest
+<br />
+the latest is 14 so we need to upgrade it and so give below command in terminal  <br />
+
+> yarn upgrade @testing-library/user-event@latest
 
 
 Pointer Interactions - (Counter Component Increment Button Click)
-=================================================================
-click() is not Pointer API, its a Convenience API that internally calls Pointer API
-Convinience API is what we typically use while writing test case.
-For mouse interactions apart from click - we have dblClick() and tripleClick()
+-----------------------------------------------------------------
+click() is not Pointer API, its a Convenience API that internally calls Pointer API  
+Convinience API is what we typically use while writing test case.  
+For mouse interactions apart from click - we have dblClick() and tripleClick()  
 
-For Mouse movement there is hover() and unhover()
+For Mouse movement there is -->  hover() and unhover()
 
 # Pointer APIs:
 -------------
