@@ -52,9 +52,10 @@ Code Coverage
 - statement coverage
 - branch coverage
 - function coverage
-- line coverage
+- line coverage  
 
-# npm run coverage
+> npm run coverage
+
 
 Assertions: 
 - While writing test, we often need to check that values meet certain conditions
