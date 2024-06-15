@@ -300,8 +300,11 @@ type() and tab() are not part of keyboard API
 other Utility API are :
 - clear() : clears an editable element
     e.g
-<br />  
+<br />
+
 ```javascript
+
+
 test('clear', async() => {
     render(<textarea defaultValue="Hello, World!" />)
     await userEvent.clear(screen.getByRole('textbox'))
