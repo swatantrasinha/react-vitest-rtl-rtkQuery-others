@@ -321,19 +321,6 @@ test('clear', async() => {
 });
 
 ```
-
-<br />
-
-```javascript
-
-
-test('clear', async() => {
-    render(<textarea defaultValue="Hello, World!" />)
-    await userEvent.clear(screen.getByRole('textbox'))
-    expect(screen.getByRole('textbox')).toHaveValue('')
-})
-```
-
 <br />
 
 - selectOptions: select elements in dropdown or listbox
@@ -350,7 +337,7 @@ Clipboard APIs
 - cut()  
 - paste()  
 
-All these 3 APIs are not sufficient to the use case then we can use Keyboard APIs  
+All these 3 APIs are not sufficient to the use case then we can use Keyboard APIs  <br />
 Keyboard API- simulate interaction with keyboard
 
 -------------------------------------------
@@ -358,8 +345,8 @@ keyboard('foo') // translates to : f,o,o
 keyboard('{Shift>}A{/Shift}') // translates to - Shift(down), A, Shift(Up)  
 
 
-Section6- Providers
-====================
+# Section6- Providers
+======================
 ThemeProvider- MuiMode.tsx component 
 need material ui package installation so 
 
