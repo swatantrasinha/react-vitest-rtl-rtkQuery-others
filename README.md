@@ -222,23 +222,27 @@ e.g data fetched from server will be rendered after a few miliseconds
 
 
 # Debugging
-============
- a. screen.debug() --> to visualize formatted state of DOM tree
+-----------
+ a. screen.debug() --> to visualize formatted state of DOM tree  <br />
 
- b. logRoles --> to print list of all implicit aria-roles
-        const view= render(<Skills skills={skills} />)
+ b. logRoles --> to print list of all implicit aria-roles  <br />
+        const view= render(<Skills skills={skills} />)   <br />
         logRoles(view.container)
+<br />
 
 # Testing Playground
-====================
-chrome extension 
-use pointer and get query for elements
+--------------------
+
+> get the chrome extension 
+
+use pointer and get query for elements  <br />
+
 ================================================================================================================
 ----------------------------------------------------------------------------------------------------------------
 ================================================================================================================
 User Interaction
-================
-A click using a mouse or a keypress using a keyboard, the application has to respond to such interactions.
+-----------------
+A click using a mouse or a keypress using a keyboard, the application has to respond to such interactions.  <br />
 Hence the test should ensure the interations should be handled as expected.
 
 user-event
