@@ -299,11 +299,17 @@ type() and tab() are not part of keyboard API
 
 other Utility API are :
 - clear() : clears an editable element
-    e.g     test('clear', async() => {
-                render(<textarea defaultValue="Hello, World!" />)
-                await userEvent.clear(screen.getByRole('textbox'))
-                expect(screen.getByRole('textbox')).toHaveValue('')
-            })
+    e.g
+<br />  
+```javascript
+test('clear', async() => {
+    render(<textarea defaultValue="Hello, World!" />)
+    await userEvent.clear(screen.getByRole('textbox'))
+    expect(screen.getByRole('textbox')).toHaveValue('')
+})
+```
+
+<br />
 
 - selectOptions: select elements in dropdown or listbox
 
@@ -311,23 +317,22 @@ other Utility API are :
 
 - upload() - to uplaod file
 
-Apart from Convience and Utility APIs, we also have Clipboard APIs
+Apart from Convience and Utility APIs, we also have Clipboard APIs  
 
-Clipboard APIs
---------------
-- copy()
-- cut()
-- paste()
+Clipboard APIs  
+--------------  
+- copy()  
+- cut()  
+- paste()  
 
-All these 3 APIs are not sufficient to the use case then we can use Keyboard APIs
+All these 3 APIs are not sufficient to the use case then we can use Keyboard APIs  
 Keyboard API- simulate interaction with keyboard
------------=
-keyboard('foo') // translates to : f,o,o
-keyboard('{Shift>}A{/Shift}') // translates to - Shift(down), A, Shift(Up)
 
-================================================================================================================
-----------------------------------------------------------------------------------------------------------------
-================================================================================================================
+-------------------------------------------
+keyboard('foo') // translates to : f,o,o  
+keyboard('{Shift>}A{/Shift}') // translates to - Shift(down), A, Shift(Up)  
+
+
 Section6- Providers
 ====================
 ThemeProvider- MuiMode.tsx component 
