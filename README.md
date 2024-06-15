@@ -253,14 +253,14 @@ Hence the test should ensure the interations should be handled as expected.  <br
 
 user-event
 ----------
-A companion library for testing that simulates user interactions by dispatching the events that would happen if the interaction took place in browser.  <br />
+It is  a companion library for testing that simulates user interactions by dispatching the events that would happen if the interaction took place in browser.
 It is recommended way.
 
 
 fireEvent vs user-event
 -----------------------
 fireEvent is a method from RTL which is used to dispatch DOM events  
-user-events simulates full interactions which may fire multiple events and do additional checks along the way  
+However user-events is superior as it simulates full interactions which may fire multiple events and do additional checks along the way  
 e.g we can dispatch the change events on an input field using fireEvent  
 <br />
 
@@ -273,7 +273,7 @@ user-events allows you to describe a user-interaction instead of a concrete even
 DOM just like  user interaction in the browser would do.  <br />
 e.g it would not let a user click a hidden element or type in a disabled textbox
 
-in package.json we can see user event has version 13 (as we have CRA version)  <br />
+<ins>Note:</ins> in package.json we can see user event has version 13 (as we have CRA version)  <br />
 "@testing-library/user-event": "^13.5.0",
 
 <br />
@@ -297,18 +297,31 @@ For Mouse movement there is -->  hover() and unhover()
     pointer('[MouseLeft][Mouseright]') - can pass string if key is only arg to function
     pointer('[MouseLeft>]') - press button without releasing it 
     pointer('[/MouseLeft]') - release previously pressed button
-
+<br />
+<ins>Note: </ins> Unless there is a strong use-case to use Pointer API , its always suggested to use Convenience API as its more simple to read and code
+<br />
 
 
 Keyboard Interactions-(Counter Component Input Textbox and Set Button Click)
 ============================================================================
-type() and tab() are not part of keyboard API
+<ins>Note: </ins> type() and tab() are not part of keyboard API
 - type : is a Utility API
 - tab : is a Convience API
 
 other Utility API are :
 - clear() : clears an editable element
-    e.g
+e.g is below :
+
+```javascript
+
+test('clear', async() => {
+    render(<textarea defaultValue="Hello World" />)
+    await userEvent.clear(screen.getByRole('textbox'))
+    expect (screen.getByRole('textbox')).toHaveValue('')
+});
+
+```
+
 <br />
 
 ```javascript
