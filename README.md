@@ -226,8 +226,17 @@ e.g data fetched from server will be rendered after a few miliseconds
  a. screen.debug() --> to visualize formatted state of DOM tree  <br />
 
  b. logRoles --> to print list of all implicit aria-roles  <br />
-        const view= render(<Skills skills={skills} />)   <br />
-        logRoles(view.container)
+ See:  <ins>Skills.test.tsx  </ins>
+ 
+```javascript
+import {  logRoles } from '@testing-library/react'
+....
+....
+
+const view= render(<Skills skills={skills} />)
+logRoles(view.container) // display - list of all implicit aria-roles
+```
+
 <br />
 
 # Testing Playground
