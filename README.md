@@ -79,7 +79,11 @@ What not to test
 - third party code
 - code not important from user point of view
 
+RTL Queries 
+============
 
+<details>
+  <summary> RTL Queries Types </summary>
 RTL Queries
 ===========
 To find single element on page we have
@@ -189,6 +193,7 @@ e.g screen.getByText((content) => content.startsWith('Hello'))  <br />
 </details>
 
 <details>
+    
   <summary>queryBy and queryAllBy </summary>
 
 queryBy and queryAllBy
@@ -220,9 +225,12 @@ e.g data fetched from server will be rendered after a few miliseconds
 
 </details>
 
+</details> 
 
-# Debugging
------------
+<hr />
+
+Debugging
+===========
  a. screen.debug() --> to visualize formatted state of DOM tree  <br />
 
  b. logRoles --> to print list of all implicit aria-roles  <br />
@@ -244,7 +252,9 @@ logRoles(view.container) // display - list of all implicit aria-roles
 
 > get the chrome extension -> use pointer and get query for elements  <br />
 
-
+<details>
+  <summary> Handling User Interactions </summary>
+    
 User Interaction
 -----------------
 A click using a mouse or a keypress using a keyboard, the application has to respond to such interactions.  <br />
@@ -343,7 +353,7 @@ Keyboard API- simulate interaction with keyboard
 -------------------------------------------
 keyboard('foo') // translates to : f,o,o  
 keyboard('{Shift>}A{/Shift}') // translates to - Shift(down), A, Shift(Up)  
-
+</details>
 
 # Section6- Providers
 ======================
