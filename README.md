@@ -358,19 +358,27 @@ keyboard('{Shift>}A{/Shift}') // translates to - Shift(down), A, Shift(Up)
 
 # Section6- Providers
 ======================
-ThemeProvider- MuiMode.tsx component 
-need material ui package installation so 
+ThemeProvider- MuiMode.tsx component  <br />
+need material ui package installation so  <br />
 
-Add these 3 in package.json dependencies and then do npm install
-"@mui/material": "^5.9.3",
-"@emotion/react": "^11.10.0",
-"@emotion/styled": "^11.10.0"
-(we will also copy code for AppProvider, MuiMode and test-Utils)
-npm start we can see dark mode in browser
+Add these 3 in package.json dependencies and then do  <br />
+
+> npm install  
+
+"@mui/material": "^5.9.3",  
+"@emotion/react": "^11.10.0",  
+"@emotion/styled": "^11.10.0"  
+<br />
+
+(we will also copy code for AppProvider, MuiMode and test-Utils)  
+
+> npm start  <br />
+we can see dark mode in browser
 
 in component <AppProviders />-  if we change mode to light we can see light mode in browser
 
 now test case for this:
+
 Custom Render Function
 ----------------------
 Please check code and comments in MuiMode.test.tsx 
