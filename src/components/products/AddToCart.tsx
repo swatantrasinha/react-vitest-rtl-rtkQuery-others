@@ -1,6 +1,6 @@
-import React from 'react'
-import { useAppDispatch, useAppSelector } from '../../redux/redux-hooks'
-import { AppDispatch, RootState } from '../../redux/store';
+
+import { useAppDispatch } from '../../redux/redux-hooks'
+import { AppDispatch } from '../../redux/store';
 import { addItemToCart } from '../../redux/feature/cartSlice';
 
 type CartDataProps= {

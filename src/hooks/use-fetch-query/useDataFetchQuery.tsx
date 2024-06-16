@@ -1,12 +1,21 @@
 import { useReducer, useEffect } from 'react';
+import { ProductCardProps } from '../../types/products/product';
+
+export type RawDataType = {
+  limit: number;
+  products: ProductCardProps[];
+  skip: number;
+  total: number;
+}
+
 
 type State = {
-    data: unknown;
+    data: unknown | RawDataType;
     loading: boolean;
-    error: Error | null;
+    error: null | Error;
 };
 
-type Action = { type: 'LOADING' }   | { type: 'SUCCESS'; payload: unknown }   | { type: 'ERROR'; payload: Error };
+type Action = { type: 'LOADING' }   | { type: 'SUCCESS'; payload: ProductCardProps[] }   | { type: 'ERROR'; payload: Error };
 
 const dataFetchReducer = (state: State, action: Action) => {
     switch (action.type) {
@@ -21,14 +30,13 @@ const dataFetchReducer = (state: State, action: Action) => {
     }
 }
 const initialState=     {
-    data: null,
+    data: [],
     loading: false,
-    error: null,
+    error: null
 }
 
-const useDataFetchQuery =(url: string) => {
-    const [state, dispatch] = useReducer(dataFetchReducer, initialState
-);
+const useDataFetchQuery = (url: string) => {
+    const [state, dispatch] = useReducer(dataFetchReducer, initialState);
 
     useEffect(() => {
         let didCancel = false;
@@ -38,13 +46,13 @@ const useDataFetchQuery =(url: string) => {
 
             try {
                 const response = await fetch(url);
-                if (!didCancel) {
+                if (!didCancel) { 
                     const data = await response.json();
                     dispatch({ type: 'SUCCESS', payload: data });
                 }
-            } catch (error) {
+            } catch ( error ) {
                 if (!didCancel) {
-                    dispatch({ type: 'ERROR', payload: error });
+                    dispatch({ type: 'ERROR', payload: error as Error});
                 }
             }
         }

@@ -1,14 +1,20 @@
-import useDataFetchQuery from "../../hooks/use-fetch-query/useDataFetchQuery";
+import useDataFetchQuery, { RawDataType } from "../../hooks/use-fetch-query/useDataFetchQuery";
+import { ProductCardProps } from "../../types/products/product";
 import ProductCard from "../products/ProductCard";
 import { StyledFetchUsingCustomHook } from "./FetchUsingCustomHook.style";
 
+
+
+
 const FetchUsingCustomHook = () => {
-  const { data, loading, error } = useDataFetchQuery<{ url: string }>(
+  const { data  , loading, error } = useDataFetchQuery(
     "https://dummyjson.com/products"
   );
 
-  const getProductCards = (arr) => {
-    return arr.map((prod, index: number) => {
+  const getProductCards = (arr:ProductCardProps[]) => {
+    console.log('getProductCards => arr', arr);
+    
+    return arr.map((prod: ProductCardProps, index: number) => {
       const uniqueKey = `${prod.id}-${prod.title}-${index}`;
       return (
         <div key={uniqueKey}>
@@ -25,12 +31,14 @@ const FetchUsingCustomHook = () => {
   if (error) {
     return <div>Error: {error.message}</div>;
   }
+  
+const {products} = data as RawDataType;
 
-  if (data && data.products) {
+  if (products) {
     return (
       <StyledFetchUsingCustomHook>
         <main className="home-page">
-          <div className="grid-container">{getProductCards(data.products)}</div>
+          <div className="grid-container">{getProductCards(products)}</div>
         </main>
       </StyledFetchUsingCustomHook>
     );

@@ -1,9 +1,8 @@
-import React from 'react'
 import { ProductCardProps } from '../../types/products/product'
 import AddToCart from './AddToCart';
 import { StyledProductCard } from './ProductCard.style';
 
-const ProductCard = ({id, category, brand, rating, price, tags, title, description, images}: ProductCardProps) => {
+const ProductCard = ({id, category, brand, rating, price, tags, title,  images}: ProductCardProps) => {
      const productImage= images && images[0];
      const cartData= {id, price, title, productImage, brand}
      

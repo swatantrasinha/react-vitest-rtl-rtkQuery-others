@@ -1,8 +1,10 @@
 const Application = () => {
     return (
       <>
-        <h1>Job application form</h1>
-        <h2>Section 1</h2>
+        <h1>Page 1- getBY</h1>
+        <h2>Job application form</h2>
+        <hr />
+        
         <p>All fields are mandatory</p>
         <span title="close">X</span>
         <img src="https://via.placeholder.com/150" alt="a person with a laptop" />

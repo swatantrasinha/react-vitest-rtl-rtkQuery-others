@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react'
 import { Users } from './Users'
 import { http, HttpResponse } from 'msw';
-import { server } from '../../test/mocks/server'
+import { server } from '../../../test/mocks/server'
 
 describe('Users', () => {
   test('renders correctly', () => {

@@ -6,10 +6,11 @@ type CartItemType= {
     itemQuantity: number;
     itemPrice: number;
     itemBrand: string;
+    imageUrl: string;
 }
 
 type InitialStateType= {
-    cartItems: CartItemType[] | []
+    cartItems: [] | CartItemType[]
 };
 
 const initialState: InitialStateType = {
@@ -26,7 +27,13 @@ export const cartReducer= createSlice({
             const findIndex= currentItems.findIndex(ele => ele.id === action.payload.id)
                         
             if((state.cartItems.length == 0) || (findIndex === -1)) {
-                state.cartItems.push(action.payload);
+                 // state.cartItems.push(action.payload); not sure why TS error is showing
+                if(state.cartItems.length == 0) {
+                    state.cartItems[0]= action.payload;
+                } else {
+                    state.cartItems[state.cartItems.length]= action.payload;
+                }
+                
             } else {
                 console.log('itemInCart => ', findIndex);
                 const currentQuantity= state.cartItems[findIndex].itemQuantity;

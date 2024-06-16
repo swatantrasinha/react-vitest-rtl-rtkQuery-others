@@ -33,7 +33,7 @@ describe('Skills', () => {
     const view= render(<Skills skills={skills} />)
     logRoles(view.container)
    
-    const startLearningButton = await screen.findByRole(
+    const startLearningButton = await screen.findByRole( // default timeout of 1000ms - give timeout if need to wait more
       'button',
       {
         name: 'Start learning',
