@@ -381,13 +381,28 @@ now test case for this:
 
 Custom Render Function
 ----------------------
+<ins>Docs for custom render: </ins> -  https://testing-library.com/docs/react-testing-library/setup  <br />
+The docs says :  <br />
+
+It's often useful to define a custom render method that includes things like global context providers, data stores, etc. To make this available globally, 
+one approach is to define a utility file that re-exports everything from React Testing Library. You can replace React Testing Library with this file in 
+all your imports  <br />
+
+create new file
+src --> utils --> test-utils.tsx  <br />
+
 Please check code and comments in MuiMode.test.tsx 
 
 Custom React Hook
 ------------------
 Create React Hook - src - hooks- useCounter
 Please check comments in useCounter.test.tsx
-
+<ins>Note: </ins> in test case for useCounter we need to use act function. This is because unlike testing for  <br />
+Counter Component at - src --> components --> sample-test-case-components --> counter --> Counter.test.tsx  <br />
+we were wrting assertion for checking value after screen.getBy .... this screen.get from RTL implements act internally  <br />
+but here in case of custom hook useCounter there is not screen.getBy as there is no DOM here  <br />
+we need to check data in result.current so act is not implemented internally <br />
+hence we need to wrap in act explicitly  
 
 Section7- Mocking
 =================
