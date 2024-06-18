@@ -395,8 +395,8 @@ Please check code and comments in MuiMode.test.tsx
 
 Custom React Hook
 ------------------
-Create React Hook - src - hooks- useCounter
-Please check comments in useCounter.test.tsx
+Create React Hook - src - hooks- useCounter  <br />
+Please check comments in useCounter.test.tsx  <br/>
 Also see -  <ins>why renderHook need to be used in case of custom hook </ins>  
 <br />
 
