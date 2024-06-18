@@ -397,8 +397,13 @@ Custom React Hook
 ------------------
 Create React Hook - src - hooks- useCounter
 Please check comments in useCounter.test.tsx
+Also see -  <ins>why renderHook need to be used in case of custom hook </ins>  
+<br />
+
 <ins>Note: </ins> in test case for useCounter we need to use act function. This is because unlike testing for  <br />
+<br/>
 Counter Component at - src --> components --> sample-test-case-components --> counter --> Counter.test.tsx  <br />
+
 we were wrting assertion for checking value after screen.getBy .... this screen.get from RTL implements act internally  <br />
 but here in case of custom hook useCounter there is not screen.getBy as there is no DOM here  <br />
 we need to check data in result.current so act is not implemented internally <br />
