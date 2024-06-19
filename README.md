@@ -411,6 +411,8 @@ hence we need to wrap in act explicitly
 
 Section7- Mocking
 =================
+<br />
+
 #  Mocking function :  => CounterTwo component -  src- components-CounterTwo.tsx  <br />
 
 jest.fn()  <br />
