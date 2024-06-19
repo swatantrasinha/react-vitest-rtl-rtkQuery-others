@@ -411,10 +411,33 @@ hence we need to wrap in act explicitly
 
 Section7- Mocking
 =================
-# Mocking function :  => CounterTwo component -  src- components-CounterTwo.tsx
-jest.fn()
-Please check-  CounterTwo.test.tsx
+#  Mocking function :  => CounterTwo component -  src- components-CounterTwo.tsx  <br />
 
+jest.fn()  <br />
+
+Please check-  CounterTwo.test.tsx
+```javascript
+
+test('handlers are called', async () => {
+  user.setup()
+  const incrementHandler =  vi.fn(); // jest.fn()
+  const decrementHandler = vi.fn(); // jest.fn()
+  render(
+    <CounterTwo
+      count={0}
+      handleIncrement={incrementHandler}
+      handleDecrement={decrementHandler}
+    />
+  )
+  const incrementButton = screen.getByRole('button', { name: 'Increment' })
+  const decrementButton = screen.getByRole('button', { name: 'Decrement' })
+  await user.click(incrementButton)
+  await user.click(decrementButton)
+  expect(incrementHandler).toHaveBeenCalledTimes(1)
+  expect(decrementHandler).toHaveBeenCalledTimes(1)
+})
+
+```
 
 # Mocking HTTP request :  => Users component - src- components-Users.tsx
 We need to mock HTTP request as real API hit can be costly, so we have package - MSW (Mock Service Worker) for this.
