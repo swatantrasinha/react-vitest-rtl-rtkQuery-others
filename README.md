@@ -413,7 +413,9 @@ Section7- Mocking
 =================
 <br />
 
-Mocking function :  => CounterTwo component -  src- components-CounterTwo.tsx  <br />
+# Mocking function  
+<br />
+Fle Path => CounterTwo component -  src- components-CounterTwo.tsx  <br />
 
 jest.fn()  <br />
 
@@ -441,15 +443,47 @@ test('handlers are called', async () => {
 
 ```
 
-# Mocking HTTP request :  => Users component - src- components-Users.tsx
-We need to mock HTTP request as real API hit can be costly, so we have package - MSW (Mock Service Worker) for this.
+# Mocking HTTP request  <br />
+File Path :  Users component - src- components-Users.tsx  <br />
+
+
+We need to mock HTTP request as real API hit can be costly, so we have package - MSW (Mock Service Worker) for this.  <br />
+
 - MSW -> API mocking libbrary thta uses service worker API to intercept actual request. It is very feature rich.
 
 MSW Setup
 ---------
-npm i msw --save-dev
-src -> new folder "mocks" and new file -> "server.ts"
-docs- https://mswjs.io/docs/api/setup-server/
+
+- install msw as dev dependency  
+- create server  
+- add handler  
+<br />
+
+Docs- https://mswjs.io/docs/api/setup-server/ 
+
+> npm i msw --save-dev  
+<br />
+
+src -> new folder "mocks" and new file -> "server.ts"  <br />
+<ins> See the docs : </ins>  https://mswjs.io/docs/integrations/node  
+To create server -> Copy and paste code from above link in newly created file server.ts  <br />
+<br /> 
+
+
+```javascript
+import { setupServer } from 'msw/node'
+import { handlers } from './handlers'
+
+// This configures a Service Worker with the given request handlers.
+export const server = setupServer(...handlers)
+```
+
+<br />
+here we see an error because handler file is not created and so we need to create it now  <br />
+
+
+
+
 
 
 
